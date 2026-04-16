@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AgroSmart | AI-Powered Crop Intelligence</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+    --primary:#0b1f1a;
+    --accent:#2d6a4f;
+
+    /* NEW BACKGROUND (soft modern green/gray) */
+    --light:#eef5f2;
+
+    --text:#1a1a1a;
+}
+
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+
+body{background:var(--light);color:var(--text);line-height:1.6;}
+
+/* NAV */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#fff;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    z-index:1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+
+nav a{
+    margin-left:30px;
+    text-decoration:none;
+    color:#333;
+    font-size:0.9rem;
+    font-weight:600;
+}
+
+nav a:hover{color:var(--accent);}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    padding:0 10%;
+    color:#fff; /* 👈 switch text to white */
+
+    background-image:
+        linear-gradient(rgba(5, 30, 20, 0.65), rgba(5, 30, 20, 0.65)),
+        url('https://images.pexels.com/photos/2382904/pexels-photo-2382904.jpeg?auto=compress&cs=tinysrgb&w=1920');
+
+    background-size: cover;
+    background-position: center;
+}
+        
+.hero h1{
+    font-size:3.5rem;
+    max-width:700px;
+    line-height:1.2;
+}
+
+.hero p{
+    margin-top:20px;
+    max-width:550px;
+    color:#ffffff;   /* white */
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 30px;
+    background:var(--primary);
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* SECTION */
+section{
+    padding:100px 10%;
+    background:transparent; /* or use var(--light) */
+    margin-top:20px;
+}
+
+.section-title{
+    max-width:700px;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+}
+
+.card{
+    padding:20px;
+    background:#ffffffcc; /* soft glass effect */
+    border-radius:10px;
+    text-align:center;
+    backdrop-filter: blur(6px);
+}
+.card img{
+    width:100%;        /* fits card width */
+    max-width:260px;   /* 👈 controls how wide it can grow */
+    height:90px;       /* keeps it short */
+    object-fit:cover;
+    border-radius:8px;
+    margin-bottom:10px;
+
+    display:block;
+}
+
+/* PREDICTOR */
+.predictor{
+    background-image:
+        linear-gradient(to right, rgba(11,31,26,0.88), rgba(11,31,26,0.70)),
+        url('https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&w=1920');
+        
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:#fff;
+}
+
+.form{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    max-width:700px;
+}
+
+input{
+    padding:15px;
+    border:1px solid #ddd;
+}
+
+button{
+    grid-column:span 2;
+    padding:15px;
+    background:var(--primary);
+    color:#fff;
+    border:none;
+    cursor:pointer;
+}
+
+.result{
+    margin-top:20px;
+    font-size:1.3rem;
+}
+
+/* FOOTER */
+footer{
+    padding:60px 10%;
+    background:var(--primary);
+    color:#fff;
+}
+
+#contact{
+    background:transparent;
+}
+
+#contact .card{
+    text-align:center;
+    transition:0.3s;
+}
+
+#contact .card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+@media(max-width:768px){
+    .form{grid-template-columns:1fr;}
+    button{grid-column:span 1;}
+}
+@media(max-width:900px){
+    .grid{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+@media(max-width:600px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+}
+
+.contact-wrapper{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:40px;
+    margin-top:40px;
+}
+
+/* MAP */
+.contact-map{
+    height:500px;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+/* FORM */
+.contact-form form{
+    display:flex;
+    flex-direction:column;
+}
+
+.contact-form label{
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:600;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:14px;
+}
+
+.contact-form textarea{
+    min-height:150px;
+    resize:none;
+}
+
+.contact-form button{
+    margin-top:20px;
+    padding:15px;
+    background:var(--primary);
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+@media(max-width:768px){
+    .contact-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .contact-map{
+        height:300px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+
+
+<!-- NAV -->
+<nav>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/Cephas_logo.png') }}" alt="logo">
+    </div>
+   
+    <div>
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#predict">Model</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>AI-powered crop decisions for modern agriculture</h1>
+        <p>
+            AgroSmart enables farmers and agricultural stakeholders to make
+            data-driven crop decisions using machine learning and environmental data.
+        </p>
+        <a href="#predict" class="btn">Try the model</a>
+    </div>
+</div>
+
+<!-- PROBLEM -->
+<section id="problem">
+    <div class="section-title">
+        <h2>The challenge</h2>
+        <p>
+            Farmers often struggle to choose the right crops due to the below factors which lead to reduced yields and financial losses.
+        </p>
+    </div>
+
+    <div class="grid">
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1527482797697-8795b05a13fe?auto=format&fit=crop&w=1200&q=80">
+    <h4>Unpredictable climate</h4>
+    <p>Farmers face increasing uncertainty due to changing weather conditions.</p>
+</div>
+
+<div class="card">
+    <img src="https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg" style="width:100%; border-radius:10px; margin-bottom:15px;">
+    <h4>Soil variability</h4>
+    <p>Inconsistent soil nutrients reduce productivity.</p>
+</div>
+
+<div class="card">
+    <img src="https://images.pexels.com/photos/2933243/pexels-photo-2933243.jpeg">
+    <h4>Limited insights</h4>
+    <p>Decisions are often made without data support.</p>
+</div>
+</div>  <!-- ✅ ADD THIS -->
+
+    
+</section>  
+
+<section id="solution">
+
+    <div class="section-title">
+        <h2>Our approach</h2>
+        <p>
+            AgroSmart uses machine learning to analyze environmental and soil data
+            to generate precise crop recommendations.
+        </p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg?auto=compress&cs=tinysrgb&w=1200">
+            <h4>Data Input</h4>
+            <p>NPK, temperature, humidity, rainfall, and soil pH are collected from farms.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1200">
+            <h4>Model Processing</h4>
+            <p>Machine learning algorithms analyze patterns in agricultural conditions.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/2131784/pexels-photo-2131784.jpeg?auto=compress&cs=tinysrgb&w=1200">
+            <h4>Recommendation</h4>
+            <p>The system outputs the best crop for maximum yield and sustainability.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PREDICTOR -->
+<section id="predict" class="predictor">
+    <div class="section-title">
+        <h2>Run the model</h2>
+        <p>Input your farm data to generate a crop recommendation.</p>
+    </div>
+
+    <form id="predictForm" class="form">
+        <input type="number" name="N" placeholder="Nitrogen" required>
+        <input type="number" name="P" placeholder="Phosphorus" required>
+        <input type="number" name="K" placeholder="Potassium" required>
+        <input type="number" name="temperature" placeholder="Temperature" required>
+        <input type="number" name="humidity" placeholder="Humidity" required>
+        <input type="number" name="ph" placeholder="pH" required>
+        <input type="number" name="rainfall" placeholder="Rainfall" required>
+
+        <button type="submit">Generate Recommendation</button>
+    </form>
+
+    <div id="loading" style="display:none;">Processing...</div>
+
+    <div id="result" class="result" style="display:none;">
+        Recommended crop: <span id="cropResult"></span>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Have questions or want to collaborate? Reach out to us.</p>
+    </div>
+
+    <!-- MAP + FORM -->
+    <div class="contact-wrapper">
+
+        <!-- LEFT: MAP -->
+        <div class="contact-map">
+            <iframe 
+                src="https://www.google.com/maps?q=Ogbomoso,Oyo+State,Nigeria&output=embed"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- RIGHT: FORM -->
+        <div class="contact-form">
+            <form>
+                <label>Your Name *</label>
+                <input type="text" placeholder="Enter your Name" required>
+
+                <label>Your Email *</label>
+                <input type="email" placeholder="Enter your Email Address" required>
+
+                <label>Subject</label>
+                <input type="text" placeholder="Enter your Subject">
+
+                <label>Your Message *</label>
+                <textarea placeholder="Enter your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- CONTACT CARDS -->
+    <div class="grid">
+
+        <div class="card">
+            <i class="fa-solid fa-envelope"></i>
+            <h4>Email</h4>
+            <p>
+                <a href="mailto:support@agrosmart.com">cephasict@gmail.com</a>
+            </p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-phone"></i>
+            <h4>Phone</h4>
+            <p>
+                <a href="tel:+2348000000000">+234 814 133 5945</a>
+            </p>
+        </div>
+
+        <div class="card">
+            <h4>Location</h4>
+            <p>Elisam Event Center, Imperial Hotel Junction, Yoaco, Ogbomoso, Oyo State, Nigeria</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>AgroSmart © 2026 | AI for Sustainable Agriculture</p>
+</footer>
+
+<script>
+document.getElementById("predictForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let formData = new FormData(this);
+
+    document.getElementById("loading").style.display = "block";
+    document.getElementById("result").style.display = "none";
+
+    fetch("/predict", { method: "POST", body: formData })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("result").style.display = "block";
+        document.getElementById("cropResult").innerText = data.prediction;
+    })
+    .catch(() => {
+        document.getElementById("loading").style.display = "none";
+        alert("Error connecting to model");
+    });
+});
+</script>
+
+</body>
+</html>

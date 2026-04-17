@@ -9,301 +9,325 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
 <style>
     html, body {
-    width: 100%;
-    overflow-x: hidden;
-}
-:root{
-    --primary:#0b1f1a;
-    --accent:#2d6a4f;
-
-    /* NEW BACKGROUND (soft modern green/gray) */
-    --light:#eef5f2;
-
-    --text:#1a1a1a;
-}
-
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-
-body{background:var(--light);color:var(--text);line-height:1.6;}
-
-/* NAV */
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:#fff;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
-    z-index:1000;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 50px;
-    width: auto;
-    object-fit: contain;
-    display: block;
-}
-
-
-nav a{
-    margin-left:30px;
-    text-decoration:none;
-    color:#333;
-    font-size:0.9rem;
-    font-weight:600;
-}
-
-nav a:hover{color:var(--accent);}
-
-/* HERO */
-.hero{
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-    padding:0 10%;
-    color:#fff; /* 👈 switch text to white */
-
-    background-image:
-        linear-gradient(rgba(5, 30, 20, 0.65), rgba(5, 30, 20, 0.65)),
-        url('https://images.pexels.com/photos/2382904/pexels-photo-2382904.jpeg?auto=compress&cs=tinysrgb&w=1920');
-
-    background-size: cover;
-    background-position: center;
-}
-        
-.hero h1 {
-    font-size: clamp(1.8rem, 5vw, 3.5rem);
-}
-
-.hero p{
-    margin-top:20px;
-    max-width:550px;
-    color:#ffffff;   /* white */
-}
-
-.hero {
-    min-height: 100vh;
-}
-
-.hero p {
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-}
-
-.btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 30px;
-    background:var(--primary);
-    color:#fff;
-    text-decoration:none;
-    font-weight:600;
-}
-
-/* SECTION */
-section {
-    padding: 80px 5%;
-}
-
-.section-title{
-    max-width:700px;
-    margin-bottom:40px;
-}
-
-.section-title h2{
-    font-size:2rem;
-    margin-bottom:10px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.card{
-    padding:20px;
-    background:#ffffffcc; /* soft glass effect */
-    border-radius:10px;
-    text-align:center;
-    backdrop-filter: blur(6px);
-}
-.card img{
-    width:100%;        /* fits card width */
-    max-width:260px;   /* 👈 controls how wide it can grow */
-    height:90px;       /* keeps it short */
-    object-fit:cover;
-    border-radius:8px;
-    margin-bottom:10px;
-
-    display:block;
-}
-
-/* PREDICTOR */
-.predictor{
-    background-image:
-        linear-gradient(to right, rgba(11,31,26,0.88), rgba(11,31,26,0.70)),
-        url('https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&w=1920');
-        
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-
-    color:#fff;
-}
-
-.form {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-}
-
-@media (max-width: 768px) {
-    .form {
-        grid-template-columns: 1fr;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    :root {
+        --primary: #0b1f1a;
+        --accent: #2d6a4f;
+        --light: #eef5f2;
+        --text: #1a1a1a;
     }
 
-    button {
-        grid-column: span 1;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
     }
-}
-@media (max-width: 600px) {
+
+    body {
+        background: var(--light);
+        color: var(--text);
+        line-height: 1.6;
+    }
+
+    /* NAV */
     nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #fff;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        z-index: 1000;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+        display: block;
     }
 
     nav a {
-        margin-left: 0;
-        margin-right: 15px;
-        font-size: 0.85rem;
+        margin-left: 30px;
+        text-decoration: none;
+        color: #333;
+        font-size: 0.9rem;
+        font-weight: 600;
     }
-}
-@media (max-width: 600px) {
+
+    nav a:hover {
+        color: var(--accent);
+    }
+
+    /* HERO */
+    .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 10%;
+        color: #fff;
+        background-image: linear-gradient(rgba(5, 30, 20, 0.65), rgba(5, 30, 20, 0.65)),
+            url('https://images.pexels.com/photos/2382904/pexels-photo-2382904.jpeg?auto=compress&cs=tinysrgb&w=1920');
+        background-size: cover;
+        background-position: center;
+    }
+        
+    .hero h1 {
+        font-size: clamp(1.8rem, 5vw, 3.5rem);
+    }
+
+    .hero p {
+        margin-top: 20px;
+        max-width: 550px;
+        color: #ffffff;
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    }
+
     .btn {
-        width: 100%;
-        text-align: center;
+        display: inline-block;
+        margin-top: 30px;
+        padding: 15px 30px;
+        background: var(--primary);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
     }
-}
-@media (max-width: 600px) {
-    .card img {
-        height: 160px;
+
+    .btn:hover {
+        background: var(--accent);
+        transform: translateY(-2px);
     }
-}
 
+    /* SECTION */
+    section {
+        padding: 80px 5%;
+    }
 
-input{
-    padding:15px;
-    border:1px solid #ddd;
-}
+    .section-title {
+        max-width: 700px;
+        margin-bottom: 40px;
+    }
 
-button{
-    grid-column:span 2;
-    padding:15px;
-    background:var(--primary);
-    color:#fff;
-    border:none;
-    cursor:pointer;
-}
-
-.result{
-    margin-top:20px;
-    font-size:1.3rem;
-}
-
-/* FOOTER */
-footer{
-    padding:60px 10%;
-    background:var(--primary);
-    color:#fff;
-}
-
-#contact{
-    background:transparent;
-}
-
-#contact .card{
-    text-align:center;
-    transition:0.3s;
-}
-
-#contact .card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
-}
-.contact-wrapper {
-    display: flex;
-    gap: 20px;
-    align-items: stretch;
-}
-.contact-map {
-    flex: 1;
-    min-height: 400px;
-}
-
-.contact-form {
-    flex: 1;
-}
-
-
-@media (max-width: 768px) {
+    .section-title h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
 
     .grid {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        padding: 20px;
+        background: #ffffffcc;
+        border-radius: 10px;
+        text-align: center;
+        backdrop-filter: blur(6px);
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+        width: 100%;
+        max-width: 260px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    /* PREDICTOR */
+    .predictor {
+        background-image: linear-gradient(to right, rgba(11,31,26,0.88), rgba(11,31,26,0.70)),
+            url('https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&w=1920');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #fff;
     }
 
     .form {
-        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    textarea {
+        min-height: 100px;
+        resize: vertical;
     }
 
     button {
-        grid-column: span 1;
+        grid-column: span 2;
+        padding: 15px;
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background: var(--accent);
+        transform: translateY(-2px);
+    }
+
+    button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .result {
+        margin-top: 20px;
+        font-size: 1.3rem;
+        text-align: center;
+        padding: 20px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 60px 10%;
+        background: var(--primary);
+        color: #fff;
+        text-align: center;
+    }
+
+    #contact {
+        background: transparent;
     }
 
     .contact-wrapper {
-        flex-direction: column;
+        display: flex;
+        gap: 20px;
+        align-items: stretch;
+        margin-bottom: 40px;
     }
 
     .contact-map {
-        height: 300px;
+        flex: 1;
+        min-height: 400px;
     }
 
-}
+    .contact-form {
+        flex: 1;
+    }
 
-input, textarea {
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 16px;
-}
+    .contact-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-form label {
+        font-weight: 600;
+        margin-bottom: -5px;
+    }
+
+    #loading, #contactLoading {
+        text-align: center;
+        padding: 20px;
+        font-weight: 600;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+
+        .form {
+            grid-template-columns: 1fr;
+        }
+
+        button {
+            grid-column: span 1;
+        }
+
+        .contact-wrapper {
+            flex-direction: column;
+        }
+
+        .contact-map {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        nav {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 5%;
+        }
+
+        nav a {
+            margin: 5px 8px;
+            font-size: 0.85rem;
+        }
+
+        .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .card img {
+            height: 160px;
+        }
+    }
 </style>
 </head>
 
 <body>
-
-
-
 
 <!-- NAV -->
 <nav>
     <div class="logo">
         <img src="{{ url_for('static', filename='images/Cephas_logo.png') }}" alt="logo">
     </div>
-   
     <div>
         <a href="#problem">Problem</a>
         <a href="#solution">Solution</a>
@@ -332,32 +356,26 @@ input, textarea {
             Farmers often struggle to choose the right crops due to the below factors which lead to reduced yields and financial losses.
         </p>
     </div>
-
     <div class="grid">
-<div class="card">
-    <img src="https://images.unsplash.com/photo-1527482797697-8795b05a13fe?auto=format&fit=crop&w=1200&q=80">
-    <h4>Unpredictable climate</h4>
-    <p>Farmers face increasing uncertainty due to changing weather conditions.</p>
-</div>
-
-<div class="card">
-    <img src="https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg" style="width:100%; border-radius:10px; margin-bottom:15px;">
-    <h4>Soil variability</h4>
-    <p>Inconsistent soil nutrients reduce productivity.</p>
-</div>
-
-<div class="card">
-    <img src="https://images.pexels.com/photos/2933243/pexels-photo-2933243.jpeg">
-    <h4>Limited insights</h4>
-    <p>Decisions are often made without data support.</p>
-</div>
-</div>  <!-- ✅ ADD THIS -->
-
-    
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1527482797697-8795b05a13fe?auto=format&fit=crop&w=1200&q=80" alt="Climate">
+            <h4>Unpredictable climate</h4>
+            <p>Farmers face increasing uncertainty due to changing weather conditions.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg" alt="Soil" style="width:100%; border-radius:10px; margin-bottom:15px;">
+            <h4>Soil variability</h4>
+            <p>Inconsistent soil nutrients reduce productivity.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/2933243/pexels-photo-2933243.jpeg" alt="Insights">
+            <h4>Limited insights</h4>
+            <p>Decisions are often made without data support.</p>
+        </div>
+    </div>
 </section>  
 
 <section id="solution">
-
     <div class="section-title">
         <h2>Our approach</h2>
         <p>
@@ -365,30 +383,24 @@ input, textarea {
             to generate precise crop recommendations.
         </p>
     </div>
-
     <div class="grid">
-
         <div class="card">
-            <img src="https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg?auto=compress&cs=tinysrgb&w=1200">
+            <img src="https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Data Input">
             <h4>Data Input</h4>
             <p>NPK, temperature, humidity, rainfall, and soil pH are collected from farms.</p>
         </div>
-
         <div class="card">
-            <img src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1200">
+            <img src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Processing">
             <h4>Model Processing</h4>
             <p>Machine learning algorithms analyze patterns in agricultural conditions.</p>
         </div>
-
         <div class="card">
-            <img src="https://images.pexels.com/photos/2131784/pexels-photo-2131784.jpeg?auto=compress&cs=tinysrgb&w=1200">
+            <img src="https://images.pexels.com/photos/2131784/pexels-photo-2131784.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Recommendation">
             <h4>Recommendation</h4>
             <p>The system outputs the best crop for maximum yield and sustainability.</p>
         </div>
-
     </div>
 </section>
-
 
 <!-- PREDICTOR -->
 <section id="predict" class="predictor">
@@ -398,36 +410,30 @@ input, textarea {
     </div>
 
     <form id="predictForm" class="form">
-        <input type="number" name="N" placeholder="Nitrogen" required>
-        <input type="number" name="P" placeholder="Phosphorus" required>
-        <input type="number" name="K" placeholder="Potassium" required>
-        <input type="number" name="temperature" placeholder="Temperature" required>
-        <input type="number" name="humidity" placeholder="Humidity" required>
-        <input type="number" name="ph" placeholder="pH" required>
-        <input type="number" name="rainfall" placeholder="Rainfall" required>
-
+        <input type="number" name="N" placeholder="Nitrogen" step="any" required>
+        <input type="number" name="P" placeholder="Phosphorus" step="any" required>
+        <input type="number" name="K" placeholder="Potassium" step="any" required>
+        <input type="number" name="temperature" placeholder="Temperature (°C)" step="any" required>
+        <input type="number" name="humidity" placeholder="Humidity (%)" step="any" required>
+        <input type="number" name="ph" placeholder="pH (0-14)" step="any" required>
+        <input type="number" name="rainfall" placeholder="Rainfall (mm)" step="any" required>
         <button type="submit">Generate Recommendation</button>
     </form>
 
     <div id="loading" style="display:none;">Processing...</div>
-
     <div id="result" class="result" style="display:none;">
-        Recommended crop: <span id="cropResult"></span>
+        🌾 Recommended crop: <strong><span id="cropResult"></span></strong>
     </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-
     <div class="section-title">
         <h2>Contact Us</h2>
         <p>Have questions or want to collaborate? Reach out to us.</p>
     </div>
 
-    <!-- MAP + FORM -->
     <div class="contact-wrapper">
-
-        <!-- LEFT: MAP -->
         <div class="contact-map">
             <iframe 
                 src="https://www.google.com/maps?q=Ogbomoso,Oyo+State,Nigeria&output=embed"
@@ -439,14 +445,8 @@ input, textarea {
             </iframe>
         </div>
 
-
-
-        
-
-        <!-- RIGHT: FORM -->
         <div class="contact-form">
-            <form action="/contact" method="POST">
-
+            <form id="contactForm">
                 <label>Your Name *</label>
                 <input type="text" name="name" required>
 
@@ -460,38 +460,34 @@ input, textarea {
                 <textarea name="message" required></textarea>
 
                 <button type="submit">Send Message</button>
-
             </form>
+            <div id="contactLoading" style="display:none;">Sending message...</div>
         </div>
-
     </div>
 
-    <!-- CONTACT CARDS -->
     <div class="grid">
-
         <div class="card">
-            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-envelope" style="font-size: 2rem; margin-bottom: 10px;"></i>
             <h4>Email</h4>
             <p>
-                <a href="mailto:support@agrosmart.com">cephasict@gmail.com</a>
+                <a href="mailto:cephasict@gmail.com" style="color: var(--primary);">cephasict@gmail.com</a>
             </p>
         </div>
 
         <div class="card">
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-phone" style="font-size: 2rem; margin-bottom: 10px;"></i>
             <h4>Phone</h4>
             <p>
-                <a href="tel:+2348000000000">+234 814 133 5945</a>
+                <a href="tel:+2348141335945" style="color: var(--primary);">+234 814 133 5945</a>
             </p>
         </div>
 
         <div class="card">
+            <i class="fa-solid fa-location-dot" style="font-size: 2rem; margin-bottom: 10px;"></i>
             <h4>Location</h4>
             <p>Ore-Ofe Plaza, Opposite Ambassador Hotel, Yoaco, Ogbomoso, Oyo State, Nigeria</p>
         </div>
-
     </div>
-
 </section>
 
 <!-- FOOTER -->
@@ -500,25 +496,113 @@ input, textarea {
 </footer>
 
 <script>
+// Smooth scrolling for navigation links
+document.querySelectorAll('nav a, .btn').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    });
+});
+
+// Prediction Form Handler
 document.getElementById("predictForm").addEventListener("submit", function(e){
     e.preventDefault();
 
+    // Validate pH
+    let phValue = parseFloat(this.querySelector('[name="ph"]').value);
+    if (isNaN(phValue) || phValue < 0 || phValue > 14) {
+        alert("⚠️ pH value must be between 0 and 14");
+        return;
+    }
+
     let formData = new FormData(this);
+    let loadingDiv = document.getElementById("loading");
+    let resultDiv = document.getElementById("result");
+    let submitBtn = this.querySelector('button[type="submit"]');
+    let originalText = submitBtn.textContent;
 
-    document.getElementById("loading").style.display = "block";
-    document.getElementById("result").style.display = "none";
+    loadingDiv.style.display = "block";
+    resultDiv.style.display = "none";
+    submitBtn.textContent = "Processing...";
+    submitBtn.disabled = true;
 
-    fetch("/predict", { method: "POST", body: formData })
+    fetch("/predict", { 
+        method: "POST", 
+        body: formData 
+    })
     .then(res => res.json())
     .then(data => {
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("result").style.display = "block";
-        document.getElementById("cropResult").innerText = data.prediction;
+        loadingDiv.style.display = "none";
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        
+        if (data.status === "success") {
+            resultDiv.style.display = "block";
+            document.getElementById("cropResult").innerText = data.prediction;
+            // Smooth scroll to result
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+            alert("❌ Error: " + data.message);
+        }
     })
-    .catch(() => {
-        document.getElementById("loading").style.display = "none";
-        alert("Error connecting to model");
+    .catch((error) => {
+        loadingDiv.style.display = "none";
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        alert("❌ Error connecting to model. Please check if the server is running.");
+        console.error("Error:", error);
     });
+});
+
+// Contact Form Handler
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const submitButton = this.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    const loadingDiv = document.getElementById("contactLoading");
+    
+    // Validate email
+    const email = this.querySelector('[name="email"]').value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert("⚠️ Please enter a valid email address");
+        return;
+    }
+    
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+    loadingDiv.style.display = "block";
+    
+    try {
+        const response = await fetch('/contact', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const result = await response.json();
+        
+        if (result.status === 'success') {
+            alert("✅ " + result.message);
+            this.reset(); // Clear form
+        } else {
+            alert("❌ Error: " + result.message);
+        }
+    } catch (error) {
+        alert("❌ Failed to send message. Please try again later.");
+        console.error('Contact form error:', error);
+    } finally {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+        loadingDiv.style.display = "none";
+    }
 });
 </script>
 
